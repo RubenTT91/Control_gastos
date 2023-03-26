@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title >Presupuesto</title>
+</head>
+<body onload="cargarApp()">
+<!-- Contenedor del cabecero -->
+<div id="contenedorsuperior" class="cabecero">
+    <div class="presupuesto">
+        <div class="presupuesto_titulo" title="Esta es una página para calcular el presupuesto">
+            Presupuesto Disponible
+        </div>
+        <div class="presupuesto_valor" id="presupuestoTotal">$2800.00</div>        
+        <!-- Ingreso y su total-->
+        <div class="presupuesto_ingreso limpiarEstilos">
+            <div class="presupuesto_ingreso--texto">Ingreso</div>
+            <div class="derecha">
+                <div class="presupuesto_ingreso--valor" id="ingresoTotal">+4000</div>
+                <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+            </div>
+        </div>
+        <!-- Egreso y su total-->
+        <div class="presupuesto_egreso limpiarEstilos">
+            <div class="presupuesto_egreso--texto">Egreso</div>
+            <div class="derecha limpiarEstilos">
+                <div class="presupuesto_egreso--valor" id="egresoTotal">-5000</div>
+                <div class="presupuesto_egreso--porcentaje" id="porcentajeEgreso">45%</div>
+            </div>
+        </div>        
+    </div>
+</div>
+<form id="forma" onsubmit="return false;"> <!--onsubmit="return false;" evita que se envíe el formulario-->
+<div id="agregarEliminar" class="agregar">
+    <div class="agregar_contenedor">
+        <select name="operacion" class="agregar_tipo" id="tipo">
+            <option value="ingreso" id="mas" selected>+</option>
+            <option value="egreso" id="menos">-</option>
+        </select>
+        <input type="text" class="agregar_descripcion" name="descripcion" placeholder="Agregar Descripción" id="descripcion_formulario">
+        <input type="number" class="agregar_valor" name="valor" placeholder="Valor" id="valor_formulario" step="any">
+        <button id="guardar" class="agregar_btn" onclick="agregarDato()"><ion-icon name="add-circle-outline"></ion-icon></button>
+        
+    </div>
+    </div>
+</form>
+
+<!-- Contenedor de lista para Ingreso y Egreso -->
+<div class="contenedor limpiarEstilos">
+    <div class="ingreso">
+        <!-- Contenedor de lista para Ingreso y Egreso-->
+        <h2 class="ingreso_titulo">Ingresos</h2>
+            <div id="lista-ingresos">
+                   <!-- Elemento de Ingreso-->
+                <!-- <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion"> Salario </div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">5000</div>
+                        <div class="elemento_eliminar--btn">
+                            <button clas="elemento_eliminar--btn">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>               -->
+            </div>
+        </div>
+        <!-- Contenedor de lista para Ingreso -->
+        <div class="egreso">
+            <h2 class="egreso_titulo">Egreso</h2>
+            <div id="lista-egresos">
+                <!-- Elemento de Egreso-->
+                <!-- <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">Factura</div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">-2000</div>
+                        <div class="elemento_porcentaje">10%</div>
+                        <div class="elemento_eliminar--btn">
+                            <button clas="elemento_eliminar--btn">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+<!-- Formulario para agregar o eliminar -->
+
+
+
+    <script src="js/Dato.js"></script>
+    <script src="js/Ingreso.js"></script>
+    <script src="js/Egreso.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
